@@ -1,17 +1,19 @@
 # Intelligent-Complaint-Analysis
+
 # Setup & Execution Guide
 This project builds a Retrieval-Augmented Generation (RAG) pipeline to analyze financial product complaints. Tasks 1 and 2 cover data cleaning, chunking, embedding, and indexing for semantic search.
+
+
 # Task 1: Exploratory Data Analysis & Preprocessing
 #  Objective:
 Prepare the CFPB complaints dataset for semantic search by filtering, cleaning, and structuring the narratives.
 Input:
 Place your raw CFPB CSV (e.g., Consumer_Complaints.csv) into the data/ directory.
- Steps:
+# Steps:
 Run the notebook:
-,,bash
+```bash
 jupyter notebook notebooks/01_eda_preprocessing.ipynb
-,,
-
+```
 This will:
 
 - Load and analyze the raw dataset
@@ -31,10 +33,9 @@ This will:
 - Money transfers
 
 - Clean and normalize the complaint narratives
-,,bash
-
+```bash
 data/filtered_complaints.csv
-,,
+```
 
 # Task 2: Text Chunking, Embedding, and FAISS Indexing
 # Objective:
@@ -42,22 +43,22 @@ Convert cleaned complaint narratives into vector embeddings and index them for f
 Requirements:
 Install dependencies:
 
-,, bash
+```bash
 
 pip install pandas matplotlib seaborn langchain faiss-cpu sentence-transformers
-,, 
+```
 If you're using a GPU and want FAISS GPU support:
-,,bash 
+```bash 
 pip install faiss-gpu
 
-,,
+```
 ⚙️ Steps:
 Run the script:
 
-,, bash
+``` bash
 python w5_embedding_indexing.py
 
-,, 
+```
 This will:
 
 Split each narrative into chunks (chunk_size=500, chunk_overlap=100)
@@ -68,13 +69,12 @@ Index the embeddings in a FAISS vector store
 
 Save the index and metadata in:
 
-,,bash
+``` bash
 
-vector_store/faiss_index.index
-vector_store/metadata.pkl
+/data/vector_store/faiss_index.index
+/data/vector_store/metadata.pkl
 
-,,
-
+```
 
 
 
