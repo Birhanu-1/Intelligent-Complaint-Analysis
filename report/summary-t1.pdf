@@ -1,0 +1,8 @@
+## Key Findings from EDA
+
+- The dataset contains over **X** records, but only about **Y%** have complaint narratives, which are essential for this project.
+- The most common complaint categories include **Credit Cards**, **Savings Accounts**, and **BNPL**, with Credit Cards dominating volume.
+- Narrative lengths vary significantly, from under 10 words to over 500 words.
+- Text cleaning was applied to lowercase all text and remove noise like special characters and excess whitespace.
+
+The cleaned dataset, limited to five relevant product categories, is now saved as `../data/filtered_complaints.csv` and ready for embedding and retrieval.
